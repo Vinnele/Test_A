@@ -60,22 +60,8 @@ public class HelloTest {
 		 driver1.findElement(By.id("glf-1801946-1871447")).click();//Выбрать производителей Samsung и LG
 		
 		 
-		//((JavascriptExecutor) driver1).executeScript("document.getElementsByClassName('button').click()");
-
-	/*
-	 * Обратиться к этой кнопке не получается, локатор неверный ((,  как только не try
-		 WebDriverWait wait = new WebDriverWait(driver1, 30);
-		 wait.until(ExpectedConditions.elementToBeClickable(By.className("button button_action_n-filter-apply button_size_s button_pseudo_yes button_theme_pseudo i-bem button_js_inited")));
 		
-		String link = driver1.findElement(By.className("button button_action_n-filter-apply button_size_s button_pseudo_yes button_theme_pseudo i-bem button_js_inited")).getAttribute("href");
-		driver1.get(link);
-		*/
-		    // driver1.findElement(By.xpath("//div[@id='b-toolbar__right']/div[3]/div/div[2]/div/div/span")).click();
-			// driver1.findElement(By.xpath("//*[@id='']")).click();
-			 //driver1.findElement(By.className("")).click();
-		 
-		// WebElement searchButton = driver1.findElement(By.cssSelector("div#n-filter-panel-aside__apply"));
-	   //  searchButton.click();
+		 driver1.findElement(By.xpath("//div[@class='n-filter-panel-aside__apply']//button[.='Применить']")).click();
 	
 	//список найденых элементов
 		 List<WebElement> elements = driver1.findElements(By.className("snippet-card__header-text"));//"snippet-card__header-link shop-history__link link i-bem link_js_inited"));//
@@ -140,7 +126,7 @@ public class HelloTest {
 				driver1.findElement(By.id("glf-1801946-8455647")).click();//8. Выбрать производителя Beats
          
 
-				//9. Нажать кнопку Применить.
+				driver1.findElement(By.xpath("//div[@class='n-filter-panel-aside__apply']//button[.='Применить']")).click(); //9. Нажать кнопку Применить.
 				List<WebElement> elements = driver1.findElements(By.className("snippet-card__header-link"));//
 		 
 				if (elements.size() == 12)  // 10. Проверить, что элементов на странице 12.
